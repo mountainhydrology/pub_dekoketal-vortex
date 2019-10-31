@@ -86,7 +86,7 @@ for ax in grid:
     
     plt.sca(ax)
     if i==0:
-        levels=np.sort(280.-np.arange(nx))
+        levels=np.sort(270.-np.arange(nx)*0.5)
         ax.contourf(lonlon,latlat,temp,cmap='RdBu_r',levels=levels)
         ax.quiver(lonlon[::2,::2],latlat[::2,::2],dtdy[::2,::2],dtdx[::2,::2]) 
         ax.annotate('a',xy=(0.05,0.9),xycoords='axes fraction',size=25,color='white')
@@ -96,7 +96,7 @@ for ax in grid:
         ax.set_ylabel(r'y / Northern Latitude $\rightarrow$',size=18)
         
     if i==1:
-         levels=np.sort(280.-np.arange(nx))
+         levels=np.sort(270.-np.arange(nx)*0.5)
          ax.contourf(lonlon,latlat,temp2,cmap='RdBu_r',levels=levels)
          ax.quiver(lonlon[::2,::2],latlat[::2,::2],dtdy2[::2,::2],dtdx2[::2,::2])
          ax.annotate('b',xy=(0.05,0.9),xycoords='axes fraction',size=25,color='white')
@@ -111,4 +111,4 @@ for ax in grid:
 
     i=i+1    
     
-plt.savefig('dekoketal_thermalwind_v2.pdf',bbox_inches='tight')  
+plt.savefig('dekoketal_thermalwind_v3.pdf',bbox_inches='tight')  
